@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AuditLogsRouteImport } from './routes/audit-logs'
+import { Route as DashboardRouteImport } from './routes/dashboard'
+import { Route as LiveTrackingRouteImport } from './routes/live-tracking'
+import { Route as MastersRouteImport } from './routes/masters'
+import { Route as ReportsRouteImport } from './routes/reports'
+import { Route as TripsRouteImport } from './routes/trips'
+import { Route as VerificationIndexRouteImport } from './routes/verification.index'
+import { Route as VerificationTripIdRouteImport } from './routes/verification.$tripId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AuditLogsRoute = AuditLogsRouteImport.update({
+  id: '/audit-logs',
+  path: '/audit-logs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DashboardRoute = DashboardRouteImport.update({
+  id: '/dashboard',
+  path: '/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LiveTrackingRoute = LiveTrackingRouteImport.update({
+  id: '/live-tracking',
+  path: '/live-tracking',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MastersRoute = MastersRouteImport.update({
+  id: '/masters',
+  path: '/masters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReportsRoute = ReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TripsRoute = TripsRouteImport.update({
+  id: '/trips',
+  path: '/trips',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationIndexRoute = VerificationIndexRouteImport.update({
+  id: '/verification/',
+  path: '/verification/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerificationTripIdRoute = VerificationTripIdRouteImport.update({
+  id: '/verification/$tripId',
+  path: '/verification/$tripId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/audit-logs': typeof AuditLogsRoute
+  '/dashboard': typeof DashboardRoute
+  '/live-tracking': typeof LiveTrackingRoute
+  '/masters': typeof MastersRoute
+  '/reports': typeof ReportsRoute
+  '/trips': typeof TripsRoute
+  '/verification/$tripId': typeof VerificationTripIdRoute
+  '/verification/': typeof VerificationIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/audit-logs': typeof AuditLogsRoute
+  '/dashboard': typeof DashboardRoute
+  '/live-tracking': typeof LiveTrackingRoute
+  '/masters': typeof MastersRoute
+  '/reports': typeof ReportsRoute
+  '/trips': typeof TripsRoute
+  '/verification/$tripId': typeof VerificationTripIdRoute
+  '/verification': typeof VerificationIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/audit-logs': typeof AuditLogsRoute
+  '/dashboard': typeof DashboardRoute
+  '/live-tracking': typeof LiveTrackingRoute
+  '/masters': typeof MastersRoute
+  '/reports': typeof ReportsRoute
+  '/trips': typeof TripsRoute
+  '/verification/$tripId': typeof VerificationTripIdRoute
+  '/verification/': typeof VerificationIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/audit-logs'
+    | '/dashboard'
+    | '/live-tracking'
+    | '/masters'
+    | '/reports'
+    | '/trips'
+    | '/verification/$tripId'
+    | '/verification/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/audit-logs'
+    | '/dashboard'
+    | '/live-tracking'
+    | '/masters'
+    | '/reports'
+    | '/trips'
+    | '/verification/$tripId'
+    | '/verification'
+  id:
+    | '__root__'
+    | '/'
+    | '/audit-logs'
+    | '/dashboard'
+    | '/live-tracking'
+    | '/masters'
+    | '/reports'
+    | '/trips'
+    | '/verification/$tripId'
+    | '/verification/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AuditLogsRoute: typeof AuditLogsRoute
+  DashboardRoute: typeof DashboardRoute
+  LiveTrackingRoute: typeof LiveTrackingRoute
+  MastersRoute: typeof MastersRoute
+  ReportsRoute: typeof ReportsRoute
+  TripsRoute: typeof TripsRoute
+  VerificationTripIdRoute: typeof VerificationTripIdRoute
+  VerificationIndexRoute: typeof VerificationIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/audit-logs': {
+      id: '/audit-logs'
+      path: '/audit-logs'
+      fullPath: '/audit-logs'
+      preLoaderRoute: typeof AuditLogsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dashboard': {
+      id: '/dashboard'
+      path: '/dashboard'
+      fullPath: '/dashboard'
+      preLoaderRoute: typeof DashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/live-tracking': {
+      id: '/live-tracking'
+      path: '/live-tracking'
+      fullPath: '/live-tracking'
+      preLoaderRoute: typeof LiveTrackingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/masters': {
+      id: '/masters'
+      path: '/masters'
+      fullPath: '/masters'
+      preLoaderRoute: typeof MastersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/reports': {
+      id: '/reports'
+      path: '/reports'
+      fullPath: '/reports'
+      preLoaderRoute: typeof ReportsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/trips': {
+      id: '/trips'
+      path: '/trips'
+      fullPath: '/trips'
+      preLoaderRoute: typeof TripsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification/': {
+      id: '/verification/'
+      path: '/verification'
+      fullPath: '/verification/'
+      preLoaderRoute: typeof VerificationIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verification/$tripId': {
+      id: '/verification/$tripId'
+      path: '/verification/$tripId'
+      fullPath: '/verification/$tripId'
+      preLoaderRoute: typeof VerificationTripIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AuditLogsRoute: AuditLogsRoute,
+  DashboardRoute: DashboardRoute,
+  LiveTrackingRoute: LiveTrackingRoute,
+  MastersRoute: MastersRoute,
+  ReportsRoute: ReportsRoute,
+  TripsRoute: TripsRoute,
+  VerificationTripIdRoute: VerificationTripIdRoute,
+  VerificationIndexRoute: VerificationIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
