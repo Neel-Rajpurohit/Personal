@@ -18,8 +18,8 @@ export const reviewQueue = [
 
 export const auditLogs = [
   { time: "20 Oct 2025, 11:20 AM", trip: "TRIP-1042", action: "System Pass", by: "AI System", remarks: "—" },
-  { time: "20 Oct 2025, 11:07 AM", trip: "TRIP-1035", action: "Manual Force Pass", by: "Officer", remarks: "Approved with force pass" },
+  { time: "20 Oct 2025, 11:07 AM", trip: "TRIP-1035", action: "Manual Pass", by: "Officer", remarks: "Approved with manual pass" },
   { time: "20 Oct 2025, 10:55 AM", trip: "TRIP-1036", action: "System Reject", by: "AI System", remarks: "Plate mismatch" },
-  { time: "20 Oct 2025, 10:48 AM", trip: "TRIP-1025", action: "Manual Force Pass", by: "Officer", remarks: "Approved with force pass" },
+  { time: "20 Oct 2025, 10:48 AM", trip: "TRIP-1025", action: "Manual Pass", by: "Officer", remarks: "Approved with manual pass" },
   { time: "19 Oct 2025, 06:15 PM", trip: "TRIP-1002", action: "System Pass", by: "AI System", remarks: "—" },
 ];
