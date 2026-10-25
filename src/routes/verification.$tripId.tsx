@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, Calendar, Camera, Car, Check, CheckCircle2, FileCheck, MapPin, Maximize2, ScanLine, Truck, XCircle, RotateCcw } from "lucide-react";
+import { ArrowRight, Calendar, Car, Check, CheckCircle2, MapPin, Maximize2, ScanLine, Truck, XCircle, RotateCcw } from "lucide-react";
 import { Card, PageHeader, btn } from "@/components/admin/AdminShell";
 import truck from "@/assets/truck.jpg";
 
@@ -21,13 +21,6 @@ const checks = [
   ["Number Plate OCR", "GJ01AB1234 (Match)"],
   ["Vehicle Type", "Truck (Match)"],
   ["Required Evidence", "Vehicle + Plate Visible"],
-];
-const pipeline = [
-  { n: "Image Quality", i: Camera },
-  { n: "Vehicle Detection", i: Car },
-  { n: "Plate OCR", i: ScanLine },
-  { n: "Evidence Check", i: FileCheck },
-  { n: "Decision", i: Check },
 ];
 
 function Detail() {
@@ -94,20 +87,6 @@ function Detail() {
           <Link to="/live-tracking" className={`${btn.outline} mt-4 w-full justify-center`}>View Trip Route <ArrowRight className="h-4 w-4" /></Link>
         </Card>
       </div>
-      <Card title="AI Processing Pipeline" className="mt-6">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          {pipeline.map((p, idx) => (
-            <div key={p.n} className="flex items-center gap-4">
-              <div className="text-center">
-                <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-success-soft text-success"><p.i className="h-6 w-6" /></div>
-                <div className="mt-2 font-medium">{p.n}</div>
-                <div className="text-sm text-success">Completed</div>
-              </div>
-              {idx < pipeline.length - 1 && <ArrowRight className="hidden h-5 w-5 text-info md:block" />}
-            </div>
-          ))}
-        </div>
-      </Card>
     </>
   );
 }
