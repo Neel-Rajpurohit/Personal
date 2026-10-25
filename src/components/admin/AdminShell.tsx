@@ -22,8 +22,6 @@ export function AdminShell({ children }: { children: ReactNode }) {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-sm">
           <div className="flex items-center gap-2"><Landmark className="h-4 w-4" />Government of Gujarat</div>
           <div className="hidden items-center gap-3 opacity-90 md:flex">
-            <a href="#main">Skip to main content</a><span>|</span><span>Screen Reader Access</span>
-            <span>A+</span><span>A</span><span>A-</span><span>|</span>
             <span className="flex items-center gap-1">English <ChevronDown className="h-3 w-3" /></span>
           </div>
         </div>
