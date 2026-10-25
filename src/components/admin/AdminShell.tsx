@@ -4,13 +4,11 @@ import type { ReactNode } from "react";
 
 const nav = [
   { to: "/", label: "Home" },
-  { to: "/dashboard", label: "Dashboard" },
   { to: "/trips", label: "Trips", caret: true },
   { to: "/verification", label: "Verification" },
   { to: "/live-tracking", label: "Live Tracking" },
   { to: "/reports", label: "Reports" },
   { to: "/audit-logs", label: "Audit Logs" },
-  { to: "/masters", label: "Masters", caret: true },
 ] as const;
 
 export function AdminShell({ children }: { children: ReactNode }) {

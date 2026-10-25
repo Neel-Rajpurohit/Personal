@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ClipboardCheck, FileBarChart, History, MapPin, Truck, Database, LayoutDashboard, ShieldCheck } from "lucide-react";
+import { ClipboardCheck, FileBarChart, History, MapPin, Truck, ShieldCheck } from "lucide-react";
 import truck from "@/assets/truck.jpg";
 
 export const Route = createFileRoute("/")({
@@ -15,13 +15,11 @@ export const Route = createFileRoute("/")({
 });
 
 const tiles = [
-  { to: "/dashboard", label: "Dashboard", desc: "Daily overview & KPIs", icon: LayoutDashboard },
   { to: "/trips", label: "Trips", desc: "All transport trips", icon: Truck },
   { to: "/verification", label: "Verification", desc: "Manual review queue", icon: ClipboardCheck },
   { to: "/live-tracking", label: "Live Tracking", desc: "Vehicles on the map", icon: MapPin },
   { to: "/reports", label: "Reports", desc: "District summaries", icon: FileBarChart },
   { to: "/audit-logs", label: "Audit Logs", desc: "Every action recorded", icon: History },
-  { to: "/masters", label: "Masters", desc: "Vehicles, godowns, users", icon: Database },
 ] as const;
 
 function Home() {
@@ -43,7 +41,7 @@ function Home() {
         </div>
         <img src={truck} alt="Grain transport truck" width={1024} height={768} className="h-full max-h-80 w-full object-cover" />
       </section>
-      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {tiles.map((t) => (
           <Link key={t.to} to={t.to} className="group rounded-lg border border-border bg-card p-5 shadow-card transition hover:-translate-y-0.5 hover:border-accent">
             <t.icon className="mb-3 h-8 w-8 text-primary" />
