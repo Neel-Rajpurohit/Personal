@@ -11,9 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AuditLogsRouteImport } from './routes/audit-logs'
-import { Route as DashboardRouteImport } from './routes/dashboard'
 import { Route as LiveTrackingRouteImport } from './routes/live-tracking'
-import { Route as MastersRouteImport } from './routes/masters'
 import { Route as ReportsRouteImport } from './routes/reports'
 import { Route as TripsRouteImport } from './routes/trips'
 import { Route as VerificationIndexRouteImport } from './routes/verification.index'
@@ -29,19 +27,9 @@ const AuditLogsRoute = AuditLogsRouteImport.update({
   path: '/audit-logs',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DashboardRoute = DashboardRouteImport.update({
-  id: '/dashboard',
-  path: '/dashboard',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LiveTrackingRoute = LiveTrackingRouteImport.update({
   id: '/live-tracking',
   path: '/live-tracking',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const MastersRoute = MastersRouteImport.update({
-  id: '/masters',
-  path: '/masters',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ReportsRoute = ReportsRouteImport.update({
@@ -68,9 +56,7 @@ const VerificationTripIdRoute = VerificationTripIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/audit-logs': typeof AuditLogsRoute
-  '/dashboard': typeof DashboardRoute
   '/live-tracking': typeof LiveTrackingRoute
-  '/masters': typeof MastersRoute
   '/reports': typeof ReportsRoute
   '/trips': typeof TripsRoute
   '/verification/$tripId': typeof VerificationTripIdRoute
@@ -79,9 +65,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/audit-logs': typeof AuditLogsRoute
-  '/dashboard': typeof DashboardRoute
   '/live-tracking': typeof LiveTrackingRoute
-  '/masters': typeof MastersRoute
   '/reports': typeof ReportsRoute
   '/trips': typeof TripsRoute
   '/verification/$tripId': typeof VerificationTripIdRoute
@@ -91,9 +75,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/audit-logs': typeof AuditLogsRoute
-  '/dashboard': typeof DashboardRoute
   '/live-tracking': typeof LiveTrackingRoute
-  '/masters': typeof MastersRoute
   '/reports': typeof ReportsRoute
   '/trips': typeof TripsRoute
   '/verification/$tripId': typeof VerificationTripIdRoute
@@ -104,9 +86,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/audit-logs'
-    | '/dashboard'
     | '/live-tracking'
-    | '/masters'
     | '/reports'
     | '/trips'
     | '/verification/$tripId'
@@ -115,9 +95,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/audit-logs'
-    | '/dashboard'
     | '/live-tracking'
-    | '/masters'
     | '/reports'
     | '/trips'
     | '/verification/$tripId'
@@ -126,9 +104,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/audit-logs'
-    | '/dashboard'
     | '/live-tracking'
-    | '/masters'
     | '/reports'
     | '/trips'
     | '/verification/$tripId'
@@ -138,9 +114,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AuditLogsRoute: typeof AuditLogsRoute
-  DashboardRoute: typeof DashboardRoute
   LiveTrackingRoute: typeof LiveTrackingRoute
-  MastersRoute: typeof MastersRoute
   ReportsRoute: typeof ReportsRoute
   TripsRoute: typeof TripsRoute
   VerificationTripIdRoute: typeof VerificationTripIdRoute
@@ -163,25 +137,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuditLogsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dashboard': {
-      id: '/dashboard'
-      path: '/dashboard'
-      fullPath: '/dashboard'
-      preLoaderRoute: typeof DashboardRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/live-tracking': {
       id: '/live-tracking'
       path: '/live-tracking'
       fullPath: '/live-tracking'
       preLoaderRoute: typeof LiveTrackingRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/masters': {
-      id: '/masters'
-      path: '/masters'
-      fullPath: '/masters'
-      preLoaderRoute: typeof MastersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/reports': {
@@ -218,9 +178,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AuditLogsRoute: AuditLogsRoute,
-  DashboardRoute: DashboardRoute,
   LiveTrackingRoute: LiveTrackingRoute,
-  MastersRoute: MastersRoute,
   ReportsRoute: ReportsRoute,
   TripsRoute: TripsRoute,
   VerificationTripIdRoute: VerificationTripIdRoute,
