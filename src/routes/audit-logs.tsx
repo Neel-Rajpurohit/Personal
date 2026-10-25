@@ -30,7 +30,7 @@ function Logs() {
         </label>
         <label className="rounded-lg border border-border bg-card p-4 shadow-card">
           <span className="mb-2 block text-sm font-medium">Action Type</span>
-          <Select options={["All Actions", "System Pass", "System Reject", "Manual Force Pass"]} />
+          <Select options={["All Actions", "System Pass", "System Reject", "Manual Pass"]} />
         </label>
       </div>
       <div className="mb-5"><SearchBox placeholder="Search by Trip ID, Vehicle No." /></div>
