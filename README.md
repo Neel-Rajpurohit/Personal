@@ -1,24 +1,41 @@
-# Admin Dashboard Suite
+# Admin Dashboard Suite (GrainShield AI)
 
-make frontend of all page for admin
+AI-powered food grain transport verification admin dashboard suite for Government of Gujarat.
 
-This project was built with [Lovable](https://lovable.dev).
+## Tech Stack
 
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/b0ecda0a-4d57-4b2f-83bd-0577d8ecf6c9).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+- **Framework**: [TanStack Start](https://tanstack.com/start) + [React 19](https://react.dev/)
+- **Routing**: [TanStack Router](https://tanstack.com/router)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/) + [shadcn/ui](https://ui.shadcn.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
 
 ## Development
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+### Prerequisites
 
+- Node.js (v20+ recommended)
+- npm, pnpm, or yarn
+
+### Getting Started
+
+1. Install dependencies:
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm install
+```
+
+2. Start the development server:
+```sh
 npm run dev
+```
+
+3. Build for production:
+```sh
+npm run build
+```
+
+4. Run tests:
+```sh
+npm run test
 ```
